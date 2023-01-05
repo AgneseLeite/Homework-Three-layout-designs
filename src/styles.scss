@@ -1,0 +1,331 @@
+/*** CSS Reset ***/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*** Desktop layout ***/
+
+body {
+  background-color: #FFFFFF;
+  padding: 100px;
+}
+
+.container__heading {
+  font-family: 'Rubik', sans-serif;
+  margin-left: 0;
+  margin-top: 40px;
+}
+
+.grid__container {
+  max-width: 1204px;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 60px 300px 90px 90px 90px;
+}
+
+.grid__item {
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+}
+
+.grid__header {
+  color: #FFFFFF;
+  background-color: #0F1629;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  padding-top: 15px;
+}
+
+.grid__menu {
+ color: #FFFFFF;
+  background-color: #EF3D4D; 
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 1;
+  padding-top: 15px;
+}
+
+.grid__hero {
+  color: #FFFFFF;
+  background-color: #4C86C6; 
+  grid-column: 1 / span 6;
+  grid-row: 2 / span ; 
+  padding-top: 110px;
+}
+
+.grid__main {
+  color: #FFFFFF;
+  background-color: #24344B;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+  padding-top: 53px;
+}
+
+.grid__space {
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 2;
+  padding-top: 53px;
+}
+
+.grid__image {
+  color: #100404;
+  background-color: #C1E4E6; 
+  grid-column: 4 / span 1; 
+  grid-row: 3 / span 1;
+  padding-top: 25px;
+}
+
+.grid__extra {
+  color: #100404;
+  background-color: #4DBD97;
+  grid-column: 4 / span 1;
+  grid-row: 4 / span 1;
+  padding-top: 25px;
+}
+
+.grid__banner {
+  color: #100404;
+  background-color: #FFD169; 
+  grid-column: 1 / span 4;
+  grid-row: 5 / span 1;
+  padding-top: 25px;
+}
+
+@media only screen and (min-width: 1008px) {
+    .container__heading {
+        visibility: hidden;
+        position: relative;
+    }
+    .container__heading:after {
+        visibility: visible;
+        position: absolute;
+        margin-left: 0;
+        content: "DESKTOP";
+    }
+}
+
+/*** Tablet layout ***/
+
+@media only screen and (min-width: 581px) and (max-width: 1007px) {
+
+    .container__heading {
+        visibility: hidden;
+        position: relative;
+    }
+    .container__heading:after {
+        visibility: visible;
+        position: absolute;
+        margin-left: 0;
+        content: "TABLET";
+    }
+
+    .grid__container {
+        grid-template-rows: 60px 210px 180px 90px 90px;
+    }
+
+    .grid__header {
+        color: #FFFFFF;
+        background-color: #0F1629;
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 1;
+        padding-top: 15px;
+      }
+      
+    .grid__menu {
+       color: #FFFFFF;
+        background-color: #EF3D4D; 
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 3;
+        padding-top: 130px;
+      }
+      
+    .grid__hero {
+        color: #FFFFFF;
+        background-color: #4C86C6; 
+        grid-column: 1 / span 6;
+        grid-row: 2 / span 1; 
+        padding-top: 90px;
+      }
+      
+    .grid__main {
+        color: #FFFFFF;
+        background-color: #24344B;
+        grid-column: 2 / span 3;
+        grid-row: 3 / span 1;
+        padding-top: 75px;
+      }
+      
+    .grid__space {
+        display: none;
+      }
+      
+    .grid__image {
+        color: #100404;
+        background-color: #C1E4E6; 
+        grid-column: 4 / span 1; 
+        grid-row: 5 / span 1;
+        padding-top: 35px;
+      }
+      
+    .grid__extra {
+        color: #100404;
+        background-color: #4DBD97;
+        grid-column: 2 / span 2;
+        grid-row: 5 / span 2;
+        padding-top: 35px;
+      }
+      
+    .grid__banner {
+        color: #100404;
+        background-color: #FFD169; 
+        grid-column: 2 / span 3;
+        grid-row: 4 / span 1;
+        padding-top: 35px;
+      }
+}
+
+/*** Mobile layout ***/
+
+@media only screen and (min-width: 250px) and (max-width: 580px) {
+
+    .container__heading {
+        visibility: hidden;
+        position: relative;
+    }
+    .container__heading:after {
+        visibility: visible;
+        position: absolute;
+        margin-left: 0;
+        content: "MOBILE";
+    }
+
+    .grid__container {
+        grid-template-columns: 100%;
+        grid-template-rows: 60px 60px 115px 115px 100px 100px 100px;
+    }
+
+    .grid__header {
+        color: #FFFFFF;
+        background-color: #0F1629;
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        padding-top: 17px;
+      }
+      
+    .grid__menu {
+       color: #FFFFFF;
+        background-color: #EF3D4D; 
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        padding-top: 17px;
+      }
+      
+    .grid__hero {
+        color: #FFFFFF;
+        background-color: #4C86C6; 
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1; 
+        padding-top: 45px;
+      }
+      
+    .grid__main {
+        color: #FFFFFF;
+        background-color: #24344B;
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+        padding-top: 53px;
+      }
+      
+    .grid__space {
+        display: none;
+      }
+      
+    .grid__image {
+        color: #100404;
+        background-color: #C1E4E6; 
+        grid-column: 1 / span 1; 
+        grid-row: 7 / span 1;
+        padding-top: 35px;
+      }
+      
+    .grid__extra {
+        color: #100404;
+        background-color: #4DBD97;
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+        padding-top: 35px;
+      }
+      
+    .grid__banner {
+        color: #100404;
+        background-color: #FFD169; 
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+        padding-top: 35px;
+      }
+}
